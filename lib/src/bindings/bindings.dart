@@ -3,6 +3,11 @@ import 'dart:io';
 import 'package:onnxruntime_v2/src/bindings/onnxruntime_bindings_generated.dart';
 
 final DynamicLibrary _dylib = () {
+  final overridePath = Platform.environment['ONNXRUNTIME_LIBRARY_PATH'];
+  if (overridePath != null && overridePath.isNotEmpty) {
+    return DynamicLibrary.open(overridePath);
+  }
+
   if (Platform.isAndroid) {
     return DynamicLibrary.open('libonnxruntime.so');
   }

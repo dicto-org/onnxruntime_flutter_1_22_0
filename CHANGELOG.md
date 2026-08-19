@@ -1,3 +1,8 @@
+## 1.23.2+4
+
+* Allow native test and diagnostic processes to select the runtime library with
+  `ONNXRUNTIME_LIBRARY_PATH`.
+
 ## 1.23.2+3
 * Release native input and output name buffers after every synchronous inference call.
 
