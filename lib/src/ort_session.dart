@@ -650,6 +650,18 @@ class OrtSessionOptions {
     OrtStatus.checkOrtStatus(statusPtr);
   }
 
+  /// Disables the session's memory-pattern optimization.
+  ///
+  /// This is required by execution providers such as DirectML that do not
+  /// support ONNX Runtime's memory-pattern optimization.
+  void disableMemPattern() {
+    final statusPtr = OrtEnv.instance.ortApiPtr.ref.DisableMemPattern
+        .asFunction<
+          bg.OrtStatusPtr Function(ffi.Pointer<bg.OrtSessionOptions>)
+        >()(_ptr);
+    OrtStatus.checkOrtStatus(statusPtr);
+  }
+
   bool _appendExecutionProvider(OrtProvider provider, OrtFlags flags) {
     var result = false;
     bg.OrtStatusPtr? statusPtr;

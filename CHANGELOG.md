@@ -1,3 +1,8 @@
+## 1.23.2+5
+
+* Expose disabling ONNX Runtime's memory-pattern optimization for execution
+  providers such as DirectML that require it.
+
 ## 1.23.2+4
 
 * Allow native test and diagnostic processes to select the runtime library with
