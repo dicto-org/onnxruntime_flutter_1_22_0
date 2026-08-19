@@ -1,3 +1,6 @@
+## 1.23.2+3
+* Release native input and output name buffers after every synchronous inference call.
+
 ## 1.23.2+2
 * Fixes Linux and Windows build issues
 * Updated dependencies
